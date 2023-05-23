@@ -1,0 +1,17 @@
+<h1>This is your current task</h1>
+<p><%= @task.title %></p>
+<p><%= @task.details %></p>
+<p><%= @task.completed ? "[X]":"[ ]"%></p>
+
+<%= form_with model: @task do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+<%= f.label :details %>
+<%= f.text_field :details %>
+<%= f.label :completed %>
+<%= f.check_box :completed %>
+<%= f.submit%>
+
+<% end %>
+
+<%= link_to "Return to the tasks", tasks_path %>
